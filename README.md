@@ -1,4 +1,4 @@
-# MESA raw suite for models from "Detailed evolutionary models of massive contact binaries: I. Model grids and synthetic populations for the Magellanic Clouds"
+# MESA binary model suite for models in "Detailed evolutionary models of massive contact binaries: I. Model grids and synthetic populations for the Magellanic Clouds"
 ## Author: Athira Menon, email: athira.menon89@gmail.com
 ### **MESA version: 10398**. Feel free to edit the files/ src code for future versions. 
 
