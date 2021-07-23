@@ -1,6 +1,42 @@
-# Suite for models from "Detailed evolutionary models of massive contact binaries: I. Model grids and synthetic populations for the Magellanic Clouds"
-# Author: Athira Menon, email: athira.menon89@gmail.com
+# MESA raw suite for models from "Detailed evolutionary models of massive contact binaries: I. Model grids and synthetic populations for the Magellanic Clouds"
+## Author: Athira Menon, email: athira.menon89@gmail.com
+### **MESA version: 10398**. Feel free to edit the files/ src code for future versions. 
 
-This is the directory of a binary model with the following initial parameters: P= 1.0 day, q= 0.9, M1+M2= Mtotal= 26 Msun. It contains the inlists, src  and make directories that can be edited to suit other close binary massive star parameters as well. 
+This is the directory of a binary model with the following initial parameters: **P= 1.0 day, q= 0.9, M1+M2= Mtotal= 26 Msun**. 
+It contains the initialization files, src  and make directories. These files can be edited to evolve other close binary massive stars as well. Please follow the steps below: 
 
-Prior to initializing the binary evolution, please create the necessary single star models for your binary model (here they are 12.3M_LMC.mod and 13.7M_LMC.mod). You may find the git repository for the single star models here: 
+1. Prior to initializing the binary evolution, please create the necessary single star models for your binary model (here they are 12.3M_LMC.mod and 13.7M_LMC.mod). You can find the git repository for the single star models here: 
+
+2. Once you have your required .mod single-star files, edit the following lines in these inlists:
+
+   a. inlist_extra: 
+  ```
+  m1 = 13.7d0, m2 = 12.3d0, 
+  initial_period_in_days = 1.0d0
+  ```
+
+   b.  inlist1
+   ```
+   saved_model_name = '13.7M_LMC.mod'
+   ```
+   c.  inlist2
+   ```
+   saved_model_name = '12.3M_LMC.mod'
+   ```
+ 
+ 3. If you plan to change the metallicity of the model, you need to also edit these lines: 
+
+   a.  inlist1
+   ```
+   Zbase = 0.0047d0
+   ```
+   b.  inlist2
+   ```
+   Zbase = 0.0047d0
+   ```   
+   
+  4. Finally, cd make and edit the directory path in makefile. Compile and run the model. 
+```
+./clean && ./mk
+./rn
+```
